@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Karpov Mykhailo - TR-51 Team</title>
+    <style>
+        :root {
+            --bg: #090b10;
+            --surface: rgba(23, 28, 40, 0.95);
+            --surface-strong: #111621;
+            --surface-soft: rgba(18, 23, 37, 0.88);
+            --text: #f5f7fb;
+            --muted: #8a96ab;
+            --accent: #5b8cff;
+            --accent-strong: #5be8d4;
+            --border: rgba(255, 255, 255, 0.08);
+            --shadow: 0 24px 80px rgba(0, 0, 0, 0.35);
+            color-scheme: dark;
+            font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html, body {
+            margin: 0;
+            min-height: 100%;
+            background: radial-gradient(circle at top, rgba(91, 140, 255, 0.18), transparent 34%),
+                        radial-gradient(circle at bottom right, rgba(92, 248, 213, 0.10), transparent 28%),
+                        var(--bg);
+            color: var(--text);
+        }
+
+        body {
+            line-height: 1.6;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            backdrop-filter: blur(18px);
+            background: rgba(255, 255, 255, 0.06);
+            border-bottom: 1px solid var(--border);
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 1rem 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1.5rem;
+            max-width: 1080px;
+            margin-inline: auto;
+        }
+
+        nav a {
+            position: relative;
+            color: var(--muted);
+            font-weight: 600;
+            transition: color 0.25s ease;
+        }
+
+        nav a:hover,
+        nav a:focus-visible {
+            color: var(--text);
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -6px;
+            width: 0;
+            height: 2px;
+            background: var(--accent);
+            transition: width 0.25s ease;
+        }
+
+        nav a:hover::after,
+        nav a:focus-visible::after {
+            width: 100%;
+        }
+
+        main {
+            max-width: 1080px;
+            margin: 0 auto;
+            padding: 4rem 1.5rem 6rem;
+        }
+
+        h1 {
+            font-size: clamp(3rem, 4vw, 4.2rem);
+            line-height: 1;
+            margin: 0 0 1rem;
+            letter-spacing: -0.04em;
+        }
+
+        section {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            box-shadow: inset 0 0 0 1px rgba(255,255,255,0.02), var(--shadow);
+            border-radius: 24px;
+            padding: 1.75rem;
+            margin-bottom: 2rem;
+            transition: background-color 0.3s ease, border-color 0.3s ease;
+        }
+
+        h2 {
+            margin-top: 0;
+            color: var(--text);
+        }
+
+        p,
+        li {
+            color: var(--muted);
+        }
+
+        ul {
+            padding-left: 1.2rem;
+            margin: 1rem 0 0;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 1rem;
+            padding: 0.95rem 1.4rem;
+            border-radius: 999px;
+            background: linear-gradient(135deg, var(--accent), var(--accent-strong));
+            color: #081122;
+            font-weight: 600;
+            text-decoration: none;
+            border: 1px solid transparent;
+            transition: transform 0.2s ease, background-color 0.2s ease;
+        }
+
+        .back-link:hover {
+            transform: translateY(-1px);
+        }
+
+        @media (max-width: 860px) {
+            nav ul {
+                flex-wrap: wrap;
+            }
+        }
+
+        @media (max-width: 620px) {
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+                padding: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html">Index</a></li>
+            <li><a href="ivan.html">Ivan</a></li>
+            <li><a href="karpov.html">Mykhailo</a></li>
+        </ul>
+    </nav>
+    <main>
+        <h1>Karpov Mykhailo</h1>
+        <section id="bio">
+            <h2>Bio</h2>
+            <p>Welcome to my profile page. I am Karpov Mykhailo, a member of the TR-51 team. I am interested in working with computers and I want to improve my knowledge in this area. Here you can learn more about me.</p>
+        </section>
+        <section id="skills">
+            <h2>Skills</h2>
+            <ul>
+                <li>Python</li>
+                <li>HTML</li>
+                <li>Git</li>
+                <li>C</li>
+                <li>C++</li>
+                <li>CSS</li>
+                <li>PHP</li>
+            </ul>
+        </section>
+        <a href="index.html" class="back-link">Back to Home</a>
+    </main>
+</body>
+</html>
