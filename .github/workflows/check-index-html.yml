@@ -1,0 +1,24 @@
+name: Check Index and Update README
+
+on:
+  workflow_dispatch:
+
+jobs:
+  check-and-update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Run check script
+        run: bash check_index.sh
+
+      - name: Update README
+        if: success()
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          echo "Гілка: ${{ github.ref_name }} — index.html наявний ✅" >> README.md
+          git add README.md
+          git commit -m "Auto-update README: index.html check passed"
+          git push
